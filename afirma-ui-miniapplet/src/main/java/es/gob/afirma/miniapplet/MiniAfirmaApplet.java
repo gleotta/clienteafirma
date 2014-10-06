@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 import javax.swing.JApplet;
 import javax.swing.UIManager;
 
+import org.mozilla.universalchardet.CharsetListener;
 import org.mozilla.universalchardet.UniversalDetector;
 
 import com.dmurph.tracking.AnalyticsConfigData;
@@ -935,7 +936,14 @@ public final class MiniAfirmaApplet extends JApplet implements MiniAfirma {
 				LOGGER.warning("Los datos proporcionados est\u00E1n mal codificados en base 64"); //$NON-NLS-1$
 				return getCharset("default", null); //$NON-NLS-1$
 			}
-			final UniversalDetector detector = new UniversalDetector();
+			final UniversalDetector detector = new UniversalDetector(new CharsetListener() {
+				
+				@Override
+				public void report(String arg0) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
 			detector.handleData(text, 0, text.length);
 			detector.dataEnd();
 			if (detector.isDone()) {
