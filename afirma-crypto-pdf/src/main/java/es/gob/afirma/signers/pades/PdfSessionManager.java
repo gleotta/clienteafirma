@@ -81,7 +81,7 @@ public final class PdfSessionManager {
 		// *********************************************************************************************************************
 
     	// Forzar la creacion de revisiones incluso en PDF no firmados
-    	final boolean alwaysCreateRevision = Boolean.parseBoolean(extraParams.getProperty("alwaysCreateRevision", "false")); //$NON-NLS-1$ //$NON-NLS-2$
+    	final boolean alwaysCreateRevision = Boolean.parseBoolean(extraParams.getProperty("alwaysCreateRevision", "true")); //$NON-NLS-1$ //$NON-NLS-2$
 
     	// Imagen de la rubrica
 		final Image rubric = PdfPreProcessor.getImage(extraParams.getProperty("signatureRubricImage")); //$NON-NLS-1$
@@ -179,8 +179,8 @@ public final class PdfSessionManager {
 			Boolean.getBoolean(extraParams.getProperty("headLess")) //$NON-NLS-1$
 		);
 
-		PdfUtil.checkPdfCertification(pdfReader.getCertificationLevel(), extraParams);
-		PdfUtil.checkUnregisteredSignatures(pdfReader, extraParams);
+		//PdfUtil.checkPdfCertification(pdfReader.getCertificationLevel(), extraParams);
+		//PdfUtil.checkUnregisteredSignatures(pdfReader, extraParams);
 
 		// Los derechos van firmados por Adobe, y como desde iText se invalidan
 		// es mejor quitarlos
