@@ -9,10 +9,11 @@
 	<version>3.3.2-SNAPSHOT</version>
 
 	<properties>
-        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
 		<afirma.keytool.keystore>${basedir}/afirma.keystore</afirma.keytool.keystore>
-        <afirma.keytool.alias>codesign</afirma.keytool.alias>
-        <afirma.keytool.password>afirma</afirma.keytool.password>
+		<afirma.keytool.alias>codesign</afirma.keytool.alias>
+		<afirma.keytool.password>afirma</afirma.keytool.password>
+		<maven.test.skip>true</maven.test.skip>
 	</properties>
 
 	<repositories>
@@ -21,15 +22,15 @@
 			<url>http://devel.uji.es/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
-	
+
 	<dependencies>
-	    
-	    <dependency>
+
+		<dependency>
 			<groupId>com.dmurph</groupId>
-  			<artifactId>JGoogleAnalyticsTracker</artifactId>
-  			<version>1.1.0</version>
+			<artifactId>JGoogleAnalyticsTracker</artifactId>
+			<version>1.1.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>es.gob.afirma</groupId>
 			<artifactId>afirma-core</artifactId>
@@ -41,7 +42,7 @@
 			<artifactId>afirma-ui-core-jse</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>es.gob.afirma</groupId>
 			<artifactId>afirma-ui-core-jse-keystores</artifactId>
@@ -173,13 +174,13 @@
 			<artifactId>afirma-ui-standalone-help-en_UK</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
-<!-- 		<dependency> -->
-<!-- 			<groupId>es.gob</groupId> -->
-<!-- 			<artifactId>jmulticard-jse</artifactId> -->
-<!-- 			<version>1.4</version> -->
-<!-- 		</dependency> -->
-		
+
+		<!-- <dependency> -->
+		<!-- <groupId>es.gob</groupId> -->
+		<!-- <artifactId>jmulticard-jse</artifactId> -->
+		<!-- <version>1.4</version> -->
+		<!-- </dependency> -->
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -187,7 +188,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<scm>
 		<connection>scm:svn:http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-standalone/trunk</connection>
 		<url>http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/project/afirma-desktop/afirma-standalone/trunk</url>
